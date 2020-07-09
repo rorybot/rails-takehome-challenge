@@ -81,4 +81,7 @@ A few more notes:
 
  - You will be start with a boiler plate rails app. 
  - You will be using MySQL for the db. Make sure to have MySQL installed on your local machine or connect a docker instance of MySQL
+ - Please fork your project and submit the URL via email to **metzger@ucar.edu**
+ - If you have any questions about the project, please feel free to email: **metzger@ucar.edu**
+ 
 
