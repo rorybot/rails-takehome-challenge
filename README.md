@@ -1,5 +1,5 @@
-**Rails Challenge Take-Home
-
+# Rails Challenge Take-Home
+---
 Welcome, developer, to CoShared! 
 
 Thanks to a massive hack, we've had to build our building management app from the ground up! Execution of this project falls to you and your team, which, as of now, consists of only you! 
@@ -9,9 +9,9 @@ To this end, a route would look something like the following:
 <domain>.com/building/office/company/employee
 
 
-** HINT: You will probably need to add something(s) to the path for this route to work.
+*HINT: You will probably need to add something(s) to the path for this route to work.*
  
-***Schema
+### Schema
 
 The schema should be as follows:
 
@@ -38,7 +38,7 @@ Employee:
 For clarity, an office takes up an entire floor!
 
 
-***Deliverables
+### Deliverables
 
 
 SUMMARY: You will be rendering a UI with dummy data of your choice. Creating a simple table in each page will suffice. A user in this scenario would be an administrator of some sort but let’s just call the admin a “user.” FYI, no need to create permissions or roles for this either.
@@ -49,7 +49,7 @@ Building:
  - On this page, a user should be able to see all of the companies that have offices in the building.
  - On this page, a user should be able to see how much total rent that building is making based on all the companies that have rented offices in that building. You can make rent whatever you want in your dummy data.
  - Users should be able to see a list of all buildings, as well as a list of all available floors for each building.
-    ****Hint this should be a list of the floor numbers that are available: 1, 3, 6, 8 etc. 
+    *Hint this should be a list of the floor numbers that are available: 1, 3, 6, 8 etc.*
 
  - Each floor would only have one company but a company can rent out multiple floors.
 Your dummy data should reflect floors that have occupancy and those that do not. Any order of your choosing.
