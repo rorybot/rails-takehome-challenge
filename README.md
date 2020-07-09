@@ -2,7 +2,7 @@
 ---
 Welcome, developer, to CoShared! 
 
-Thanks to a massive hack, we've had to build our building management app from the ground up! Execution of this project falls to you and your team, which, as of now, consists of only you! 
+We will be building a management app from the ground up! Execution of this project falls to you and your team, which, as of now, consists of only you! 
 Here at CoShared, we have many buildings, and at every building, we have many companies. Of course, a company may have offices at any number of our buildings scattered across the globe! For security reasons, it is important that every company track their employees. This way, we know which employees have access to which buildings!
 
 To this end, a route would look something like the following:
