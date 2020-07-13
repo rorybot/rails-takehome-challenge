@@ -7,6 +7,6 @@ class BuildingController < ApplicationController
     p "bob"
     p params[:id]
     @single_building = Building.find(params[:id])
-
+    @offices = @single_building.occupied_floors
   end
 end
