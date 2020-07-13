@@ -13,7 +13,7 @@
 
     <% @buildings.each do |building| %>
       <tr>
-        <td><%= building.name %></td>
+        <td> <a href="/building/<%= building.id %>"><%= building.name %></a></td>
         <td><%= building.country %></td>
         <td><%= building.address %></td>
         <td><%= building.rent_per_floor %></td>
