@@ -8,6 +8,7 @@ class Building < ApplicationRecord
   end
 
   def available_floors
-    [*1..self.number_of_floors]
+    all_floors = [*1..self.number_of_floors]
+    all_floors.reject {|floor| occupied_floors.include? floor}
   end
 end
