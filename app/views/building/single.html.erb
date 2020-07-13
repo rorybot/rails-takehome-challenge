@@ -1,5 +1,24 @@
 
+<h1><%= @single_building.name %>, <%= @single_building.country %></h1>
+<h2>Located at: <%= @single_building.address %></h2>
+<h3>Total Floors: <%= @single_building.number_of_floors %></h3>
+<h3>Available Floors: <%= @single_building.available_floors.length %></h3>
 
-<% @single_building.attributes.each do |attribute| %>
-  <%= p attribute  %>
-<% end %>
+<p>Total revenue: $<%= @single_building.revenue%></p>
+
+
+<h3>Offices:</h3>
+<table>
+  <tr>
+    <th>Floor #</th>
+    <th>Company</th>
+    </tr>
+
+    <% @offices.each do |office| %>
+      <tr>
+        <td><%= office %></td>
+        <td>"Company Name"</td>
+      </tr>
+    <% end %>
+
+  </table>
