@@ -6,12 +6,12 @@ class BuildingsController < ApplicationController
   def show
     @single_building = Building.find(params[:id])
     @offices = @single_building.offices.map do |office|
-      {:floor_number => office.floor_number, :company_name => office.company.name, :company_id => office.company.id}
+      { floor_number: office.floor_number, company_name: office.company.name, company_id: office.company.id }
     end
     @available_floors = @single_building.available_floors
-    @companies = Company.all.to_a.map{ |company|
-      [company.name,company.id]
-    }
+    @companies = Company.all.to_a.map do |company|
+      [company.name, company.id]
+    end
   end
 
   def update
@@ -34,5 +34,4 @@ class BuildingsController < ApplicationController
   def office_params
     params.require(:office).permit(:floor_number, :company_id, :building_id)
   end
-
 end

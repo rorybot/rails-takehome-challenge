@@ -1,17 +1,17 @@
+<h5>
+  <a href="/buildings"><--- all="All" buildings</a>="buildings</a>"</h5>
+  <h1><%= @single_building.name %>,
+    <%= @single_building.country %></h1>
+  <h2>Located at:
+    <%= @single_building.address %></h2>
+  <h3>Total Floors:
+    <%= @single_building.number_of_floors %></h3>
+  <h3>Available Floors:
+    <%= @single_building.available_floors.length %></h3>
 
-<h5><a href="/buildings"><--- All buildings</a></h5>
-<h1><%= @single_building.name %>,
-  <%= @single_building.country %></h1>
-<h2>Located at:
-  <%= @single_building.address %></h2>
-<h3>Total Floors:
-  <%= @single_building.number_of_floors %></h3>
-<h3>Available Floors:
-  <%= @single_building.available_floors.length %></h3>
+  <p>Total revenue: $<%= @single_building.revenue%></p>
 
-<p>Total revenue: $<%= @single_building.revenue%></p>
-
-<%= form_with scope: :office, url: '/create-office', local: true do |form| %>
+  <%= form_with scope: :office, url: '/create-office', local: true do |form| %>
   <p>Create office</p>
   <p>
     <%= form.label :floor %><br>
@@ -21,25 +21,28 @@
     <%= form.label :company %><br>
     <%= form.select :company_id, @companies %>
   </p>
-   <%= form.hidden_field :building_id, :value =>   @single_building.id%>
+  <%= form.hidden_field :building_id, :value => @single_building.id%>
   <p>
     <%= form.submit %>
   </p>
 <% end %>
 
-
 <table>
-  <caption><h2>Offices:</h2><caption>
-  <tr>
-    <th>Floor #</th>
-    <th>Company</th>
-  </tr>
+  <caption>
+    <h2>Offices:</h2>
+    <caption>
+      <tr>
+        <th>Floor #</th>
+        <th>Company</th>
+      </tr>
 
-  <% @offices.each do |office| %>
-    <tr>
-      <td><%= office[:floor_number] %></td>
-      <td> <a href="/companies/<%= office[:company_id] %>"><%= office[:company_name] %></a></td>
-    </tr>
-  <% end %>
+      <% @offices.each do |office| %>
+        <tr>
+          <td><%= office[:floor_number] %></td>
+          <td>
+            <a href="/companies/<%= office[:company_id] %>"><%= office[:company_name] %></a>
+          </td>
+        </tr>
+      <% end %>
 
-</table>
+    </table>

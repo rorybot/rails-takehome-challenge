@@ -1,29 +1,28 @@
-
 <%= form_with scope: :employee, url: employees_path, local: true do |form| %>
 
 <% if @employee.errors.any? %>
-<div id="error_explanation">
-  <h2>
-    <%= pluralize(@employee.errors.count, "error") %>! Cannot save without fixing this first!
-  </h2>
-  <ul>
-    <% @employee.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@employee.errors.count, "error") %>! Cannot save without fixing this first!
+    </h2>
+    <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-   <%= form.hidden_field :company_id, :value =>  @company_id%>
-  <p>
-    <%= form.submit %>
-  </p>
+<p>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</p>
+<p>
+  <%= form.label :title %><br>
+  <%= form.text_field :title %>
+</p>
+<%= form.hidden_field :company_id, :value => @company_id%>
+<p>
+  <%= form.submit %>
+</p>
 <% end %>
