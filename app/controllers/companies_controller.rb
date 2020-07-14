@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
     @offices = @offices.group_by(&:first).map{ |key, value|
       {:building_id => key[0], :building_name => key[1], :floors => [*value.map(&:last)]}
     }
+    @employees = @single_company.employees
   end
 
   def new
