@@ -18,6 +18,13 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def destroy
+    @employee = Employee.find(params[:id])
+    @company_id = @employee.company_id
+    @employee.destroy
+    redirect_to "/companies/#{@company_id}"
+  end
+
   private
 
   def employee_params
