@@ -1,3 +1,16 @@
 // Place all the styles related to the Company controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#company-offices-table {
+  width: 75%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#new-office-form {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  padding-left: 2%
+}

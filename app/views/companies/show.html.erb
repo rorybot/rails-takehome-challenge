@@ -4,48 +4,48 @@
   <a href="/buildings">Choose a new office</a>
 </p>
 
-<table>
+<table id='companies-offices-table'>
   <caption>
     <h2>Offices:</h2>
+  <caption>
+  <tr>
+    <th>Building</th>
+    <th>Floor #'s</th>
+  </tr>
+
+  <% @offices.each do |office| %>
+  <tr>
+    <td>
+      <a href="/buildings/<%= office[:building_id] %>"><%= office[:building_name] %></a>
+    </td>
+
+    <td><%=p office[:floors]%></td>
+  </tr>
+  <% end %>
+
+</table>
+
+<p>
+  <a href="/employees/new/<%=@single_company.id%>">Source some new employees</a>
+</p>
+
+<table id='companies-employees-table'>
+  <caption>
+    <h2>Employees:</h2>
     <caption>
       <tr>
-        <th>Building</th>
-        <th>Floor #'s</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Action</th>
       </tr>
 
-      <% @offices.each do |office| %>
+      <% @employees.each do |employee| %>
         <tr>
-          <td>
-            <a href="/buildings/<%= office[:building_id] %>"><%= office[:building_name] %></a>
-          </td>
+          <td><%= employee[:name] %></td>
+          <td><%= employee[:title] %></a>
+        </td>
+        <td><%= link_to 'Destroy', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
 
-          <td><%=p office[:floors]%></td>
-        </tr>
-      <% end %>
-
-    </table>
-
-    <p>
-      <a href="/employees/new/<%=@single_company.id%>">Source some new employees</a>
-    </p>
-
-    <table>
-      <caption>
-        <h2>Employees:</h2>
-        <caption>
-          <tr>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Action</th>
-          </tr>
-
-          <% @employees.each do |employee| %>
-            <tr>
-              <td><%= employee[:name] %></td>
-              <td><%= employee[:title] %></a>
-            </td>
-            <td><%= link_to 'Destroy', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-
-      </table>
+  </table>
