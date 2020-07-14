@@ -2,7 +2,7 @@
 
 <a href="/companies/new">Need some company?</a>
 
-<table>
+<table id="all-buildings-table">
   <tr>
     <th>Name</th>
     <th>Country</th>
@@ -22,8 +22,12 @@
       <td><%= building.address %></td>
       <td><%= building.rent_per_floor %></td>
       <td><%= building.number_of_floors %></td>
-      <td><%= building.occupied_floors %></td>
-      <td><%= building.available_floors %></td>
+      <td><%=
+        building.occupied_floors.length > 0 ? select_tag("start_time", options_for_select(building.occupied_floors)) : "NONE!" 
+      %></td>
+      <td><%=
+        building.available_floors.length > 0 ? select_tag("start_time", options_for_select(building.available_floors)) : "NONE!"
+        %></td>
     </tr>
   <% end %>
 
