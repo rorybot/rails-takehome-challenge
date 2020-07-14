@@ -1,5 +1,5 @@
-class CompanyController < ApplicationController
-  def single
+class CompaniesController < ApplicationController
+  def show
     @single_company = Company.find(params[:id])
     @offices = @single_company.offices.map do |office|
       [[office.building_id,office.building.name], office.floor_number]
@@ -7,19 +7,22 @@ class CompanyController < ApplicationController
     @offices = @offices.group_by(&:first).map{ |key, value|
       {:building_id => key[0], :building_name => key[1], :floors => [*value.map(&:last)]}
     }
+  end
 
+  def new
 
-        p @offices
-        p "foo"
+  end
 
+  def create
+    @company = Company.new(company_params)
+    @company.save
+    redirect_to @company
+  end
 
+  private
 
-        # @offices = @single_company.offices.each do |office|
-        #   building_floors[:building_name] = office.building.name
-        # end
-        # @offices = building_floors
-
-
+  def company_params
+    params.require(:company).permit(:name)
   end
 
 end
