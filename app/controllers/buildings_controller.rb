@@ -13,4 +13,29 @@ class BuildingsController < ApplicationController
       [company.name,company.id]
     }
   end
+
+  def update
+    @building = Building.find(params[:id])
+    if @building.update(building_params)
+      redirect_to @building
+    else
+      redirect_to @building
+    end
+  end
+
+  def create_office
+    @office = Office.new(office_params)
+    @office.save
+
+    p office_params[:building_id]
+    p "FSFJN"
+    redirect_to Building.find(office_params[:building_id])
+  end
+
+  private
+
+  def office_params
+    params.require(:office).permit(:floor_number, :company_id, :building_id)
+  end
+
 end

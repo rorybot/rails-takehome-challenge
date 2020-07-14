@@ -9,16 +9,19 @@
 
 <p>Total revenue: $<%= @single_building.revenue%></p>
 
-<%= form_with scope: :company, url: companies_path, local: true do |form| %>
+
+
+<%= form_with scope: :office, url: '/create-office', local: true do |form| %>
   <p>Create office</p>
   <p>
     <%= form.label :floor %><br>
-    <%= form.select :floor, @available_floors %>
+    <%= form.select :floor_number, @available_floors %>
   </p>
   <p>
     <%= form.label :company %><br>
-    <%= form.select :company, @companies %>
+    <%= form.select :company_id, @companies %>
   </p>
+   <%= form.hidden_field :building_id, :value =>   @single_building.id%>
   <p>
     <%= form.submit %>
   </p>
