@@ -18,8 +18,8 @@
 
   <% @offices.each do |office| %>
     <tr>
-      <td><%= office.floor_number %></td>
-      <td> <%= p @mapped[0][:floor_number] %> </td>
+      <td><%= office[:floor_number] %></td>
+      <td> <%= office[:company_name] %> </td>
     </tr>
   <% end %>
 
