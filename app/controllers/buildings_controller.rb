@@ -6,7 +6,7 @@ class BuildingsController < ApplicationController
   def show
     @single_building = Building.find(params[:id])
     @offices = @single_building.offices.map do |office|
-      {:floor_number => office.floor_number, :company_name => office.company.name}
+      {:floor_number => office.floor_number, :company_name => office.company.name, :company_id => office.company.id}
     end
     @available_floors = @single_building.available_floors
     @companies = Company.all.to_a.map{ |company|

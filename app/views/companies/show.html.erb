@@ -1,6 +1,6 @@
 <h1><%=@single_company.name%></h1>
 
-<p><a href="/building/index">Choose a new office</a></p>
+<p><a href="/buildings">Choose a new office</a></p>
 
 <table>
   <caption><h2>Offices:</h2><caption>
@@ -11,7 +11,7 @@
 
   <% @offices.each do |office| %>
     <tr>
-      <td><a href="/building/<%= office[:building_id] %>"><%= office[:building_name] %></a></td>
+      <td><a href="/buildings/<%= office[:building_id] %>"><%= office[:building_name] %></a></td>
 
       <td><%=p office[:floors]%></td>
     </tr>

@@ -1,3 +1,5 @@
+
+<h5><a href="/buildings"><--- All buildings</a></h5>
 <h1><%= @single_building.name %>,
   <%= @single_building.country %></h1>
 <h2>Located at:
@@ -8,8 +10,6 @@
   <%= @single_building.available_floors.length %></h3>
 
 <p>Total revenue: $<%= @single_building.revenue%></p>
-
-
 
 <%= form_with scope: :office, url: '/create-office', local: true do |form| %>
   <p>Create office</p>
@@ -38,7 +38,7 @@
   <% @offices.each do |office| %>
     <tr>
       <td><%= office[:floor_number] %></td>
-      <td> <%= office[:company_name] %> </td>
+      <td> <a href="/companies/<%= office[:company_id] %>"><%= office[:company_name] %></a></td>
     </tr>
   <% end %>
 
