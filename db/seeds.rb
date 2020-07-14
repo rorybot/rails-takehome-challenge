@@ -15,5 +15,26 @@ buildings = Building.create([
 companies = Company.create([{name: "Rory corp"},{name: "HonHonHon"}])
 
 
-buildings[0].offices.create!([{floor_number: 1, company_id:1},{floor_number: 2,company_id:1},{floor_number: 30,company_id:1},{floor_number: 45,company_id:1}, {floor_number: 52, company_id: 2}, {floor_number: 65, company_id: 2}])
-buildings[1].offices.create!([{floor_number: 1, company_id:2},{floor_number: 2,company_id:2},{floor_number: 3,company_id:2},{floor_number: 4,company_id:2}, {floor_number: 5, company_id: 1}])
+buildings[0].offices.create!([
+  {floor_number: 1, company_id:1},
+  {floor_number: 2,company_id:1},
+  {floor_number: 30,company_id:1},
+  {floor_number: 45,company_id:1},
+  {floor_number: 52, company_id: 2},
+  {floor_number: 65, company_id: 2}
+])
+
+buildings[1].offices.create!([
+  {floor_number: 1, company_id:2},
+  {floor_number: 2,company_id:2},
+  {floor_number: 3,company_id:2},
+  {floor_number: 4,company_id:2},
+  {floor_number: 5, company_id: 1}
+])
+
+
+employees = Employee.create([
+  {name: "Hank", title: "CEO", company_id: 1},
+  {name: "Peggy", title: "CFO", company_id: 1},
+  {name: "Bobby", title: "HR Manager", company_id: 1}
+])
