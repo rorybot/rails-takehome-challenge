@@ -18,3 +18,21 @@
   <% end %>
 
 </table>
+
+<p><a href="/employees/new">Source some new employees</a></p>
+
+<table>
+  <caption><h2>Employees:</h2><caption>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+  </tr>
+
+  <% @employees.each do |employee| %>
+    <tr>
+      <td><a href="/employees/<%= employee[:id] %>"><%= employee[:name] %></a></td>
+      <td><%= employee[:title] %></a></td>
+    </tr>
+  <% end %>
+
+</table>
