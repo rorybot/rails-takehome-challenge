@@ -4,13 +4,14 @@
   <caption><h2>Offices:</h2><caption>
   <tr>
     <th>Building</th>
-    <th>Floor #</th>
+    <th>Floor #'s</th>
   </tr>
 
   <% @offices.each do |office| %>
     <tr>
       <td><a href="/building/<%= office[:building_id] %>"><%= office[:building_name] %></a></td>
-      <td><%=office[:floor_number]%></td>
+
+      <td><%=p office[:floors]%></td>
     </tr>
   <% end %>
 
