@@ -1,0 +1,17 @@
+<h1><%=@single_company.name%></h1>
+
+<table>
+  <caption><h2>Offices:</h2><caption>
+  <tr>
+    <th>Building</th>
+    <th>Floor #</th>
+  </tr>
+
+  <% @offices.each do |office| %>
+    <tr>
+      <td><a href="/building/<%= office[:building_id] %>"><%= office[:building_name] %></a></td>
+      <td><%=office[:floor_number]%></td>
+    </tr>
+  <% end %>
+
+</table>
