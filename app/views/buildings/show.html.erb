@@ -31,19 +31,19 @@
 <table id='company-offices-table'>
   <caption>
     <h2>Offices:</h2>
-    <caption>
-      <tr>
-        <th>Floor #</th>
-        <th>Company</th>
-      </tr>
+  <caption>
+  <tr>
+    <th>Floor #</th>
+    <th>Company</th>
+  </tr>
 
-      <% @offices.each do |office| %>
-        <tr>
-          <td><%= office[:floor_number] %></td>
-          <td>
-            <a href="/companies/<%= office[:company_id] %>"><%= office[:company_name] %></a>
-          </td>
-        </tr>
-      <% end %>
+  <% @offices.each do |office| %>
+    <tr>
+      <td><%= office[:floor_number] %></td>
+      <td>
+        <a href="/companies/<%= office[:company_id] %>"><%= office[:company_name] %></a>
+      </td>
+    </tr>
+  <% end %>
 
-    </table>
+</table>

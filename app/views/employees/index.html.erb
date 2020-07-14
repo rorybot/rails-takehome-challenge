@@ -5,13 +5,14 @@
   </tr>
 
   <% @employees.each do |employee| %>
-    <tr>
-      <td>
-        <a href="/employees/<%= employee[:id] %>"><%= employee[:name] %></a>
-      </td>
-      <td><%= employee[:title] %></a>
+  <tr>
+    <td>
+      <a href="/employees/<%= employee[:id] %>"><%= employee[:name] %></a>
+    </td>
+    <td>
+      <%= employee[:title] %></a>
     </td>
   </tr>
-<% end %>
+  <% end %>
 
 </table>
