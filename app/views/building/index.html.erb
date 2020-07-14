@@ -9,18 +9,20 @@
     <th>Number of Floors</th>
     <th>Occupied Floors</th>
     <th>Available Floors</th>
+  </tr>
+
+  <% @buildings.each do |building| %>
+    <tr>
+      <td>
+        <a href="/building/<%= building.id %>"><%= building.name %></a>
+      </td>
+      <td><%= building.country %></td>
+      <td><%= building.address %></td>
+      <td><%= building.rent_per_floor %></td>
+      <td><%= building.number_of_floors %></td>
+      <td><%= building.occupied_floors %></td>
+      <td><%= building.available_floors %></td>
     </tr>
+  <% end %>
 
-    <% @buildings.each do |building| %>
-      <tr>
-        <td> <a href="/building/<%= building.id %>"><%= building.name %></a></td>
-        <td><%= building.country %></td>
-        <td><%= building.address %></td>
-        <td><%= building.rent_per_floor %></td>
-        <td><%= building.number_of_floors %></td>
-        <td><%= building.occupied_floors %></td>
-        <td><%= building.available_floors %></td>
-      </tr>
-    <% end %>
-
-  </table>
+</table>

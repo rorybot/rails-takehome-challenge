@@ -1,4 +1,5 @@
 class Building < ApplicationRecord
+  has_many :companies, through: :offices
   has_many :offices
 
   def occupied_floors

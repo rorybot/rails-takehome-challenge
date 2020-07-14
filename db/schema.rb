@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_174815) do
+ActiveRecord::Schema.define(version: 2020_07_13_203631) do
 
-  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "country"
     t.text "address"
@@ -22,11 +22,20 @@ ActiveRecord::Schema.define(version: 2020_07_13_174815) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "offices", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "floor_number"
+  create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.belongs_to :building
+  end
+
+  create_table "offices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "floor_number"
+    t.bigint "company_id"
+    t.bigint "building_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["building_id"], name: "index_offices_on_building_id"
+    t.index ["company_id"], name: "index_offices_on_company_id"
   end
 
 end

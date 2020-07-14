@@ -1,3 +1,4 @@
 class Office < ApplicationRecord
-  has_one :building
+  belongs_to :building
+  belongs_to :company
 end

@@ -1,24 +1,26 @@
-
-<h1><%= @single_building.name %>, <%= @single_building.country %></h1>
-<h2>Located at: <%= @single_building.address %></h2>
-<h3>Total Floors: <%= @single_building.number_of_floors %></h3>
-<h3>Available Floors: <%= @single_building.available_floors.length %></h3>
+<h1><%= @single_building.name %>,
+  <%= @single_building.country %></h1>
+<h2>Located at:
+  <%= @single_building.address %></h2>
+<h3>Total Floors:
+  <%= @single_building.number_of_floors %></h3>
+<h3>Available Floors:
+  <%= @single_building.available_floors.length %></h3>
 
 <p>Total revenue: $<%= @single_building.revenue%></p>
 
-
-<h3>Offices:</h3>
 <table>
+  <caption><h2>Offices:</h2><caption>
   <tr>
     <th>Floor #</th>
     <th>Company</th>
+  </tr>
+
+  <% @offices.each do |office| %>
+    <tr>
+      <td><%= office.floor_number %></td>
+      <td> <%= p @mapped[0][:floor_number] %> </td>
     </tr>
+  <% end %>
 
-    <% @offices.each do |office| %>
-      <tr>
-        <td><%= office %></td>
-        <td>"Company Name"</td>
-      </tr>
-    <% end %>
-
-  </table>
+</table>

@@ -6,7 +6,6 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
       t.text :address
       t.decimal :rent_per_floor
       t.integer :number_of_floors
-
       t.timestamps
     end
   end

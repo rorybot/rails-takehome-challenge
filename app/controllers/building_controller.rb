@@ -4,9 +4,13 @@ class BuildingController < ApplicationController
   end
 
   def single
-    p "bob"
-    p params[:id]
     @single_building = Building.find(params[:id])
-    @offices = @single_building.occupied_floors
+    @offices = @single_building.offices
+    p "foo"
+    @mapped = @single_building.offices.map do |office|
+      {:floor_number => office.floor_number, :company => office.company.name}
+    end
+
+
   end
 end
