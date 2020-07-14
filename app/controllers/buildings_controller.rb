@@ -26,9 +26,6 @@ class BuildingsController < ApplicationController
   def create_office
     @office = Office.new(office_params)
     @office.save
-
-    p office_params[:building_id]
-    p "FSFJN"
     redirect_to Building.find(office_params[:building_id])
   end
 
