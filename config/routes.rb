@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :companies
   resources :buildings
+  resources :employees
 
   post 'create-office' => 'buildings#create_office'
 
