@@ -3,12 +3,14 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-th, tr {
+#all-building-table > th, tr, td {
   width: 15%;
   text-align: center;
+  word-wrap: break-word;        
+    overflow-wrap: break-word;
 }
 
-table {
+#all-buildings-table {
   width: 80%;
   margin: 0 auto;
 }
