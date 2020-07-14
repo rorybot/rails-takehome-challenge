@@ -8,11 +8,15 @@
 
 buildings = Building.create([
   {name: 'Rory Tower', country: 'UK', address:'123 Westminster Road, London, SE1 7AA', rent_per_floor:24.00, number_of_floors:100},
-  {name: 'Eiffel Tower', country: 'France', address:'123 Paris Road, Paris, SE1 7AA', rent_per_floor:2.00, number_of_floors:5}
+  {name: 'Eiffel Tower', country: 'France', address:'123 Paris Road, Paris, SE1 7AA', rent_per_floor:2.00, number_of_floors:5},
+  {name: 'Underground Lair', country: '<REDACTED>', address:'123 Redacted Road, N/A', rent_per_floor:999.00, number_of_floors:20}
 ])
 
 
-companies = Company.create([{name: "Rory corp"},{name: "HonHonHon"}])
+companies = Company.create([
+  {name: "Rory Corp"},{name: "HonHonHon"},
+  {name: "Empty Corp"}
+])
 
 
 buildings[0].offices.create!([
@@ -33,7 +37,7 @@ buildings[1].offices.create!([
 ])
 
 
-employees = Employee.create([
+rory_corp_employees = Employee.create([
   {name: "Hank", title: "CEO", company_id: 1},
   {name: "Peggy", title: "CFO", company_id: 1},
   {name: "Bobby", title: "HR Manager", company_id: 1}
